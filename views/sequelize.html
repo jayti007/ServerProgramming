@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>시퀄라이즈 서버</title>
+    <style>
+      table { border: 1px solid black; border-collapse: collapse; }
+      table th, table td { border: 1px solid black; }
+    </style>
+  </head>
+  <body>
+    <div>
+      <form id="dept-form">
+        <fieldset>
+          <legend>부서 등록</legend>
+          <div><input id="dept_no" type="text" placeholder="부서번호"></div>
+          <div><input id="dept_name" type="text" placeholder="부서명"></div>
+          <div><input id="phone" type="text" placeholder="전화번호"></div>
+          <div><input id="check" type="checkbox"><label for="check">영업 여부</label></div>
+          <button type="submit">등록</button>
+        </fieldset>
+      </form>
+    </div>
+    <br>
+    <table id="dept-list">
+      <thead>
+      <tr>
+        <th>부서번호</th>
+        <th>부서명</th>
+        <th>전화번호</th>
+        <th>영업여부</th>
+        <th>삭제</th>
+      </tr>
+      </thead>
+      <tbody>
+        {% for dept in depts %}
+        <tr>
+          <td>{{dept.dept_no}}</td>
+          <td>{{dept.dept_name}}</td>
+          <td>{{dept.phone}}</td>
+          <td>{{ 'O' if dept.check else 'X'}}</td>
+          <td>
+            <button type="delete">삭제</button>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <br>
+    <div>
+      <form id="employee-form">
+        <fieldset>
+          <legend>사원 등록</legend>
+          <div><input id="dept_no" type="text" placeholder="부서번호"></div>
+          <div><input id="name" type="text" placeholder="이름"></div>
+          <div><input id="salary" type="number" placeholder="급여"></div>
+          <button type="submit">등록</button>
+        </fieldset>
+      </form>
+    </div>
+    <br>
+    <table id="employee-list">
+      <thead>
+      <tr>
+        <th>사원번호</th>
+        <th>이름</th>
+        <th>급여</th>
+        <th>이름수정</th>
+        <th>삭제</th>
+      </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="/sequelize.js"></script>
+  </body>
+</html>

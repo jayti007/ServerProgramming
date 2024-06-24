@@ -1,0 +1,23 @@
+{
+  "name": "server-programming",
+  "version": "0.0.1",
+  "description": "서프 수행",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app"
+  },
+  "author": "ZeroCho",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.19.2",
+    "morgan": "^1.10.0",
+    "mysql2": "^3.10.1",
+    "nunjucks": "^3.2.3",
+    "sequelize": "^6.37.3",
+    "sequelize-cli": "^6.4.1",
+    "sqlite3": "^5.1.7"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
